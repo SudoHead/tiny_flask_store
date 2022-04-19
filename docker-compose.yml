@@ -1,0 +1,21 @@
+version: '3'
+services:
+  app:
+    container_name: see_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./app:/app
+    ports:
+      - "80:80"
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - SESSION_COOKIE_NAME=${SESSION_COOKIE_NAME}
+      - PROD_DATABASE_URI=${PROD_DATABASE_URI}
+      - DEV_DATABASE_URI=${DEV_DATABASE_URI}
+      - FLASK_APP=main.py
+      - FLASK_DEBUG=1
+      - 'RUN=flask run --host=0.0.0.0 --port=80'
+    command: flask run --host=0.0.0.0 --port=80
