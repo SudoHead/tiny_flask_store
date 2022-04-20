@@ -2,6 +2,8 @@
 
 This Flask application contains a simple web application that allows users to buy a number of Products in the store.
 
+An HTML form is used to allow users to enter the number of Products they wish to buy.
+
 # Database
 
 The database is a SQLite database that is stored in the `app/database.db` file. The database contains the following tables (for details on the schema, see `schema.sql` or the `app/models.py` module):
